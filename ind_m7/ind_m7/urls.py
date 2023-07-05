@@ -1,5 +1,5 @@
 """
-URL configuration for ind_m7 project.
+URL configuration for primer_proyecto project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,8 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.urls import path
+from m7app.views import login_view, logout_view, home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home, name='home'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('login/', login_view, name='login'),
 ]
