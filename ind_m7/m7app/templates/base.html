@@ -5,11 +5,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
         <title>abp 1 M7</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +13,6 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/estilo.css' %}" rel="stylesheet" />
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column h-100">
@@ -31,13 +26,13 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                             <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                             {% if user.is_authenticated %}
-                                <li style="color:white">Bienvenido, {{ user.username }}
-                                <form action="{% url 'logout' %}" method="post">
+                                <li><a class="nav-link" href="{% url 'logout' %}">Hola {{ user.username }}</a></li>
+                                <li><form action="{% url 'logout' %}" method="post">
                                     {% csrf_token %}
-                                    <button type="submit">Cerrar sesión</button>
-                                </form>
+                                    <a style="color:red" class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a>
+                                </form></li>
                                 {% else %}
-                                    <a style="color:red" class="nav-link" href="{% url 'login' %}">Iniciar sesion</a>
+                                    <li><a style="color:red" class="nav-link" href="{% url 'login' %}">Iniciar sesion</a></li>
                                 {% endif %}</li>
                         </ul>
                     </div>
@@ -73,16 +68,16 @@
                                     <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'login' %}">Login</a>
                                     <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'logout' %}">Logout</a>
                                 </div> {% endcomment %}
+                                {% endblock %}
                             </div>
-                            {% endblock %}
                         </div>
                         <div class="col-xxl-7">
-                            <!-- Header profile picture-->
+                            <!-- profile picture-->
                             <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                                 <div class="profile bg-gradient-primary-to-secondary">
-                                    <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                    <!-- Watch a tutorial on how to do this on YouTube (link)-->
+
                                     <img class="img" src="{% static 'img/logo-js.png' %}" alt="..." />
+                                    <p style="text-align:center;">Logo provisorio</p>
                                     <div class="dots-1">
                                         <!-- SVG Dots-->
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
