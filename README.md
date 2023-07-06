@@ -3,7 +3,7 @@
 <b>usuario para pruebas : admin <br/>
 pass : 1z2x3c4v.</b>
 
-En pdf estan las pregunas y respuestas con imagenes y otros detalles 
+En pdf (abp1 M7.pdf) estan las pregunas y respuestas con imagenes y otros detalles 
 
 <h2>Desarrollo</h2>
 
