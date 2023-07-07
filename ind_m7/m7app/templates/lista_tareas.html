@@ -38,14 +38,15 @@
   <button type="submit">Filtrar</button>
 </form>
 
-<table>
-  <thead>
+<table class="table table-responsive">
+  <thead class="bg-light">
     <tr>
       <th>Título</th>
       <th>Descripción</th>
       <th>Fecha de Vencimiento</th>
       <th>Estado</th>
       <th>Etiqueta</th>
+      <th colspan="3">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -57,7 +58,7 @@
         <td>{{ tarea.estado }}</td>
         <td>{{ tarea.etiqueta.nombre }}</td>
         <td>
-          <a href="{% url 'ver_tarea' tarea.id %}" class="btn btn-secondary">Ver</a>
+          <a href="{% url 'ver_tarea' tarea.id %}" class="btn btn-primary">Ver</a>
         </td>
         {% comment %} <td>
           <a href="{% url 'completar_tarea' tarea.id %}" class="btn btn-success bt"><i class="fa fa-check"></i> Completar</a>
@@ -78,7 +79,6 @@
 
 <br>
 <h3>Tareas Completadas</h3>
-<p>probando</p>
 
 <table>
   <thead>
@@ -106,5 +106,4 @@
 </table>
 {% endblock %}
 
-{% block content2 %}
-{% endblock %}
+
