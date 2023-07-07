@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from .forms import LoginForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from .models import Tarea
+from .models import Tarea, Etiqueta
 from .forms import TareaForm
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -32,12 +32,33 @@ def logout_view(request):
 
 # definir vista de tareas pendientes
 @login_required
+# def listar_tareas(request):
+#     tareas_pendientes = Tarea.objects.filter(usuario=request.user, estado='pendiente').order_by('fecha_vencimiento')
+#     tareas_completadas = Tarea.objects.filter(estado='completada').order_by('-fecha_vencimiento')
+
+
+#     return render(request, 'lista_tareas.html', {'tareas_pendientes': tareas_pendientes, 'tareas_completadas': tareas_completadas})
+
+# def listar_tareas(request):
+#     tareas_pendientes = Tarea.objects.filter(estado='pendiente').order_by('fecha_vencimiento')
+#     tareas_completadas = Tarea.objects.filter(estado='completada').order_by('-fecha_vencimiento')
+#     etiquetas = Etiqueta.objects.all()
+
+#     return render(request, 'lista_tareas.html', {'tareas_pendientes': tareas_pendientes, 'tareas_completadas': tareas_completadas})
+
 def listar_tareas(request):
-    tareas_pendientes = Tarea.objects.filter(usuario=request.user, estado='pendiente').order_by('fecha_vencimiento')
-    tareas_completadas = Tarea.objects.filter(estado='completada').order_by('-fecha_vencimiento')
+    etiqueta_id = request.GET.get('etiqueta')  # Obtener el valor del filtro de etiqueta
+
+    # Filtrar las tareas pendientes según la etiqueta seleccionada (si existe)
+    tareas_pendientes = Tarea.objects.filter(estado='pendiente')
+    if etiqueta_id:
+        tareas_pendientes = tareas_pendientes.filter(etiqueta_id=etiqueta_id)
+
+    etiquetas = Etiqueta.objects.all()
+
+    return render(request, 'lista_tareas.html', {'tareas_pendientes': tareas_pendientes, 'etiquetas': etiquetas})
 
 
-    return render(request, 'lista_tareas.html', {'tareas_pendientes': tareas_pendientes, 'tareas_completadas': tareas_completadas})
 
 def crear_tarea(request):
     if request.method == 'POST':
