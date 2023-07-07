@@ -32,7 +32,7 @@ def logout_view(request):
     return redirect('home')
 
 # definir vista de tareas pendientes
-@login_required
+
 # def listar_tareas(request):
 #     tareas_pendientes = Tarea.objects.filter(usuario=request.user, estado='pendiente').order_by('fecha_vencimiento')
 #     tareas_completadas = Tarea.objects.filter(estado='completada').order_by('-fecha_vencimiento')
@@ -46,7 +46,7 @@ def logout_view(request):
 #     etiquetas = Etiqueta.objects.all()
 
 #     return render(request, 'lista_tareas.html', {'tareas_pendientes': tareas_pendientes, 'tareas_completadas': tareas_completadas})
-
+@login_required
 def listar_tareas(request):
     etiqueta_id = request.GET.get('etiqueta')  # Obtener el valor del filtro de etiqueta
 
@@ -59,6 +59,7 @@ def listar_tareas(request):
     etiquetas = Etiqueta.objects.all()
 
     return render(request, 'lista_tareas.html', {'tareas_pendientes': tareas_pendientes, 'etiquetas': etiquetas, 'tareas_completadas': tareas_completadas})
+
 
 
 
