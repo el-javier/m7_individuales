@@ -1,4 +1,4 @@
-<h1>ABP 4 Modulo 7</h1>
+<h1>ABP 5 Modulo 7</h1>
 
 <b>usuario para pruebas : admin <br/>
 pass : 1z2x3c4v.</b>
@@ -8,21 +8,21 @@ No incluye .pdf
 En este ejercicio solo lo hare funcionar, por ahora se ve desordenado en los proximos se aplicara el estilo definitivo
 <h2>Desarrollo</h2>
 
-- En la vista Listado, agregar los elementos o campos que sean necesarios, dentro de un formulario,
-que permitan, posteriormente, realizar un filtro sobre los registros de las tareas pendientes del
-usuario actual. Considerar que, por ejemplo, etiquetas, deberá tener cargados los registros
-correspondientes. Considerar en la tabla las columnas que estimes convenientes.
+- Habilitar el filtro en la vista Listado. Cada cambio en los filtros, el listado deberá presentar las
+tareas activas del usuario que cumplan con las condiciones ingresadas y/o seleccionadas.
 
-Se puede filtrar segun las etiquetas asignadas a la tareas
+En el ejercicio anterior pense que ya debian funcionar los filtros , por lo tanto ya estan habilitados 
+pero para avanzar aplique filtros de orden y estado
 
-- Generar una vista de Creación de Tareas en donde se presenten los datos del Formulario
+- Generar una vista de Edición de Tareas en donde se presenten los datos del Formulario
 correspondiente. Considera que debe haber una lista para seleccionar la Etiqueta a la que
-corresponde. Deberá compartir template con la vista Edición de Tareas.
+corresponde. Deberá compartir template con la vista Creación de Tareas.
 
-me adelante un ejercicio , los campos en crear tareas fueron realizaos en el ejercico anterior 
+Esta habilitada la seccion de edicon de tareas e incluye un desplegable para seleccion de etiquetas 
 
-- Implementar la funcionalidad de guardar un nuevo registro de Tarea en la vista Creación, validando
-los datos en template y Formulario. Luego de guardar, redireccionar a la vista de Listado,
-debiéndose ver reflejado el nuevo registro.
+- Implementar la vista de Edición, presentando los datos del registro indicado por el usuario desde
+la vista Visualización desde donde accedió, permitiendo guardar los cambios que el usuario haya
+ingresado, para luego redireccionar a la vista de Visualización.
 
-al igual que en el punto anterior me adelante un ejercicio, se puede guardar el registro de tarea, asignar etiqueta y estado.
+ya se pueden ejecutar los cambios y se redirecciona a listado principal de tareas
+
