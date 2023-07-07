@@ -16,5 +16,19 @@
 <p>Estado: {{ tarea.estado }}</p>
 <p>Etiqueta: {{ tarea.etiqueta }}</p>
 
+<hr>
+
+  <h2>Observaciones</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar Observación</button>
+  </form>
+
+  {% if tarea.observaciones %}
+    <h3>Observación Guardada:</h3>
+    <p>{{ tarea.observaciones }}</p>
+  {% endif %}
+
 {% endblock %}
 

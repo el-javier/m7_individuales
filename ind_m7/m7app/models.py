@@ -24,6 +24,7 @@ class Tarea(models.Model):
     estado = models.CharField(max_length=12, choices=ESTADO_CHOICES)
     etiqueta = models.ForeignKey(Etiqueta, on_delete=models.CASCADE)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    observaciones = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.titulo

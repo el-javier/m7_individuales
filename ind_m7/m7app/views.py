@@ -4,7 +4,7 @@ from .forms import LoginForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from .models import Tarea, Etiqueta
-from .forms import TareaForm
+from .forms import TareaForm, ObservacionForm
 from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
@@ -78,10 +78,28 @@ def crear_tarea(request):
 #     return render(request, 'ver_tarea.html', {'tarea': tarea})
 
 
+# def ver_tarea(request, tarea_id):
+#     tarea = get_object_or_404(Tarea, id=tarea_id)
+
+#     return render(request, 'ver_tarea.html', {'tarea': tarea})
+
+
 def ver_tarea(request, tarea_id):
     tarea = get_object_or_404(Tarea, id=tarea_id)
 
-    return render(request, 'ver_tarea.html', {'tarea': tarea})
+    if request.method == 'POST':
+        form = ObservacionForm(request.POST)
+        if form.is_valid():
+            observacion = form.cleaned_data['observacion']
+            tarea.observaciones = observacion
+            tarea.save()
+            return redirect('ver_tarea', tarea_id=tarea.id)
+    else:
+        form = ObservacionForm(initial={'observacion': tarea.observaciones})  # Agregar observación guardada al formulario
+
+    return render(request, 'ver_tarea.html', {'tarea': tarea, 'form': form})
+
+
 
 def editar_tarea(request, tarea_id):
     tarea = get_object_or_404(Tarea, id=tarea_id)
