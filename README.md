@@ -26,3 +26,5 @@ los datos en template y Formulario. Luego de guardar, redireccionar a la vista d
 debiéndose ver reflejado el nuevo registro.
 
 al igual que en el punto anterior me adelante un ejercicio, se puede guardar el registro de tarea, asignar etiqueta y estado.
+
+se aplicaron algunos {% extends 'base.html' %} para probar
