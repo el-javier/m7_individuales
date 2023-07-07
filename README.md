@@ -1,4 +1,4 @@
-<h1>ABP 5 Modulo 7</h1>
+<h1>ABP 6 Modulo 7</h1>
 
 <b>usuario para pruebas : admin <br/>
 pass : 1z2x3c4v.</b>
