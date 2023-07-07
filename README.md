@@ -24,5 +24,5 @@ Esta habilitada la seccion de edicon de tareas e incluye un desplegable para sel
 la vista Visualización desde donde accedió, permitiendo guardar los cambios que el usuario haya
 ingresado, para luego redireccionar a la vista de Visualización.
 
-ya se pueden ejecutar los cambios y se redirecciona a listado principal de tareas
+ya se pueden ejecutar los cambios y se redirecciona a la vista de la tarea ya modificada
 
