@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
 <h1>Crear Tarea</h1>
 
 <form method="POST" action="{% url 'crear_tarea' %}">
@@ -5,3 +9,6 @@
   {{ form.as_p }}
   <button type="submit">Guardar</button>
 </form>
+<br>
+<a class="btn btn-secondary" href="{% url 'listar_tareas' %}">Volver</a>
+{% endblock %}

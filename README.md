@@ -5,8 +5,7 @@ pass : 1z2x3c4v.</b>
 
 No incluye .pdf
 
-En este ejercicio solo lo hare funcionar, por ahora se ve desordenado en el proximo dare forma a la aplicacion con un nuevo formato css
-
+En este ejercicio solo lo hare funcionar, por ahora se ve desordenado en los proximos se aplicara el estilo definitivo
 <h2>Desarrollo</h2>
 
 - En la vista Listado, agregar los elementos o campos que sean necesarios, dentro de un formulario,

@@ -1,4 +1,8 @@
-<h1>Editar Tarea</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+h1>Editar Tarea</h1>
 
 <form method="POST">
   {% csrf_token %}
@@ -7,3 +11,4 @@
 </form>
 
 <a href="{% url 'ver_tarea' tarea.id %}">Volver</a>
+{% endblock %}

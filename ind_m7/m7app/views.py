@@ -51,12 +51,13 @@ def listar_tareas(request):
 
     # Filtrar las tareas pendientes según la etiqueta seleccionada (si existe)
     tareas_pendientes = Tarea.objects.filter(estado='pendiente')
+    tareas_completadas = Tarea.objects.filter(estado='completada').order_by('-fecha_vencimiento')
     if etiqueta_id:
         tareas_pendientes = tareas_pendientes.filter(etiqueta_id=etiqueta_id)
 
     etiquetas = Etiqueta.objects.all()
 
-    return render(request, 'lista_tareas.html', {'tareas_pendientes': tareas_pendientes, 'etiquetas': etiquetas})
+    return render(request, 'lista_tareas.html', {'tareas_pendientes': tareas_pendientes, 'etiquetas': etiquetas, 'tareas_completadas': tareas_completadas})
 
 
 

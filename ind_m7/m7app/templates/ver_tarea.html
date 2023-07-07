@@ -1,4 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
+
+{% block content %}
 
 <!-- Botones de acciones -->
 <a class="btn btn-secondary" href="{% url 'editar_tarea' tarea.id %}">Editar</a>
@@ -12,4 +15,6 @@
 <p>Fecha de Vencimiento: {{ tarea.fecha_vencimiento }}</p>
 <p>Estado: {{ tarea.estado }}</p>
 <p>Etiqueta: {{ tarea.etiqueta }}</p>
+
+{% endblock %}
 
