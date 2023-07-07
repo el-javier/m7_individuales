@@ -27,6 +27,7 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                             {% if user.is_authenticated %}
                                 <li><a class="nav-link" href="{% url 'logout' %}">Hola {{ user.username }}</a></li>
+                                <a class="nav-link" href="{% url 'listar_tareas' %}">Lista de Tareas</a>
                                 <li><form action="{% url 'logout' %}" method="post">
                                     {% csrf_token %}
                                     <a style="color:red" class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a>
@@ -42,7 +43,7 @@
             <header class="py-0">
                 <div class="container px-5 pb-5">
                     <div class="row gx-5 align-items-center">
-                        <div class="col-xxl-5">
+                        <div class="col-xxl-8">
                             <!-- Header text content-->
                             <div class="text-center text-xxl-start">
                                 <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Acceso a datos con Django</div></div>
@@ -71,7 +72,8 @@
                                 {% endblock %}
                             </div>
                         </div>
-                        <div class="col-xxl-7">
+                        {% block content2 %}
+                        <div class="col-xxl-4">
                             <!-- profile picture-->
                             <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                                 <div class="profile bg-gradient-primary-to-secondary">
@@ -193,6 +195,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% endblock %}
                     </div>
                 </div>
             </header>

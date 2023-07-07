@@ -1,6 +1,29 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.completar-tarea').click(function(e) {
+      e.preventDefault();
+      
+      var url = $(this).attr('href');
+      
+      $.ajax({
+        url: url,
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+          if (response.success) {
+            location.reload(); // Actualizar la página
+          }
+        }
+      });
+    });
+  });
+  </script>
+
 {% block content %}
 <h1>Listado de Tareas</h1>
 
@@ -35,7 +58,16 @@
         <td>{{ tarea.etiqueta.nombre }}</td>
         <td>
           <a href="{% url 'ver_tarea' tarea.id %}" class="btn btn-secondary">Ver</a>
-      </td>
+        </td>
+        {% comment %} <td>
+          <a href="{% url 'completar_tarea' tarea.id %}" class="btn btn-success bt"><i class="fa fa-check"></i> Completar</a>
+        </td> {% endcomment %}
+        <td>
+          <a href="{% url 'completar_tarea' tarea.id %}" class="btn btn-success completar-tarea"><i class="fa fa-check"></i> Completar</a>
+        </td>
+        <td>
+          <a href="{% url 'confirmar_eliminar_tarea' tarea.id %}" class="btn btn-danger"><i class="fa fa-times"></i> X </a>
+        </td>
       </tr>
     {% endfor %}
   </tbody>
@@ -63,10 +95,16 @@
         <td>{{ tarea.fecha_vencimiento }}</td>
         <td>
           <a href="{% url 'ver_tarea' tarea.id %}" class="btn btn-primary btn-sm">Ver</a>
-      </td>
+        </td>
+        <td>
+          <a href="{% url 'confirmar_eliminar_tarea' tarea.id %}" class="btn btn-primary btn-sm"><i class="fa fa-times"></i> x </a>
+        </td>
         <!-- Otros datos de la tarea -->
       </tr>
     {% endfor %}
   </tbody>
 </table>
+{% endblock %}
+
+{% block content2 %}
 {% endblock %}

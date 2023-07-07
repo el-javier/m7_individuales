@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Tarea, Etiqueta
 from .forms import TareaForm, ObservacionForm
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -123,6 +124,15 @@ def confirmar_eliminar_tarea(request, tarea_id):
 
     return render(request, 'confirmar_eliminar_tarea.html', {'tarea': tarea})
 
+# def completar_tarea(request, tarea_id):
+#     tarea = get_object_or_404(Tarea, id=tarea_id)
+
+#     if tarea.estado != 'completada':
+#         tarea.estado = 'completada'
+#         tarea.save()
+
+#     return redirect('ver_tarea', tarea_id=tarea.id)
+
 def completar_tarea(request, tarea_id):
     tarea = get_object_or_404(Tarea, id=tarea_id)
 
@@ -130,5 +140,4 @@ def completar_tarea(request, tarea_id):
         tarea.estado = 'completada'
         tarea.save()
 
-    return redirect('ver_tarea', tarea_id=tarea.id)
-
+    return redirect('listar_tareas')
