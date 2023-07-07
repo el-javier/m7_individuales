@@ -9,6 +9,7 @@
         </span>
             <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
+                <a class="btn btn-secondary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'listar_tareas' %}">Lista de Tareas</a>
                 <button type="submit" class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Cerrar sesión</button>
             </form>
             {% else %}
