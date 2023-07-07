@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Tareas Pendientes</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Fecha de Vencimiento</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tarea in tareas_pendientes %}
+        <tr>
+            <td>{{ tarea.titulo }}</td>
+            <td>{{ tarea.fecha_vencimiento }}</td>
+            <td>
+                <a href="{% url 'ver_tarea' tarea.id %}" class="btn btn-secondary">Ver</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'crear_tarea' %}" class="btn btn-primary">Agregar Tarea</a>
+<hr>
+<br>
+<h3>Tareas Completadas</h3>
+<p>probando</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Fecha de Vencimiento</th>
+      <!-- Otros encabezados de columna -->
+    </tr>
+  </thead>
+  <tbody>
+    {% for tarea in tareas_completadas %}
+      <tr>
+        <td>{{ tarea.titulo }}</td>
+        <td>{{ tarea.fecha_vencimiento }}</td>
+        <!-- Otros datos de la tarea -->
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

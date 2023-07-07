@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User, Group
-
+from .models import Tarea
 
 
 class LoginForm(forms.Form):
@@ -19,3 +19,11 @@ class LoginForm(forms.Form):
         self.fields['username'].widget.attrs['placeholder'] = 'Nombre de usuario'
         self.fields['password'].widget.attrs['placeholder'] = 'Contraseña'
 
+
+class TareaForm(forms.ModelForm):
+    class Meta:
+        model = Tarea
+        fields = ('titulo', 'descripcion', 'fecha_vencimiento', 'estado', 'etiqueta')
+        widgets = {
+            'fecha_vencimiento': forms.DateInput(attrs={'type': 'date'}),
+        }

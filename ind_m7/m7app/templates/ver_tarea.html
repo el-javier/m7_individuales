@@ -1,0 +1,15 @@
+{% load static %}
+
+<!-- Botones de acciones -->
+<a class="btn btn-secondary" href="{% url 'editar_tarea' tarea.id %}">Editar</a>
+<a class="btn btn-secondary" href="{% url 'confirmar_eliminar_tarea' tarea.id %}">Eliminar</a>
+<a class="btn btn-secondary" href="{% url 'completar_tarea' tarea.id %}">Completar</a>
+
+<a class="btn btn-secondary" href="{% url 'listar_tareas' %}">Volver</a>
+
+<h1>{{ tarea.titulo }}</h1>
+<p>{{ tarea.descripcion }}</p>
+<p>Fecha de Vencimiento: {{ tarea.fecha_vencimiento }}</p>
+<p>Estado: {{ tarea.estado }}</p>
+<p>Etiqueta: {{ tarea.etiqueta }}</p>
+
