@@ -46,6 +46,7 @@
       <th>Fecha de Vencimiento</th>
       <th>Estado</th>
       <th>Etiqueta</th>
+      <th>Prioridad</th>
       <th colspan="3">Acciones</th>
     </tr>
   </thead>
@@ -57,12 +58,22 @@
         <td>{{ tarea.fecha_vencimiento }}</td>
         <td>{{ tarea.estado }}</td>
         <td>{{ tarea.etiqueta.nombre }}</td>
+        {% comment %} <td>{{ tarea.prioridad }}</td> {% endcomment %}
+        <td>
+          <form class="prioridad-form" action="{% url 'editar_prioridad' tarea.id %}" method="POST">
+            {% csrf_token %}
+            <select name="prioridad" class="form-control" onchange="this.form.submit()">
+              {% for choice in prioridades %}
+                <option value="{{ choice }}" {% if choice == tarea.prioridad %}selected{% endif %}>{{ choice }}</option>
+              {% endfor %}
+            </select>
+          </form>
+        </td>
+        
+        
         <td>
           <a href="{% url 'ver_tarea' tarea.id %}" class="btn btn-primary">Ver</a>
         </td>
-        {% comment %} <td>
-          <a href="{% url 'completar_tarea' tarea.id %}" class="btn btn-success bt"><i class="fa fa-check"></i> Completar</a>
-        </td> {% endcomment %}
         <td>
           <a href="{% url 'completar_tarea' tarea.id %}" class="btn btn-success completar-tarea"><i class="fa fa-check"></i> Completar</a>
         </td>
@@ -104,6 +115,8 @@
     {% endfor %}
   </tbody>
 </table>
+{% endblock %}
+{% block content2 %}
 {% endblock %}
 
 

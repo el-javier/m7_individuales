@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User, Group
-from .models import Tarea
+from .models import Tarea, Prioridad
 
 
 class LoginForm(forms.Form):
@@ -21,12 +21,18 @@ class LoginForm(forms.Form):
 
 
 class TareaForm(forms.ModelForm):
+
     class Meta:
         model = Tarea
-        fields = ('titulo', 'descripcion', 'fecha_vencimiento', 'estado', 'etiqueta')
+        fields = ['titulo', 'descripcion', 'fecha_vencimiento', 'estado', 'etiqueta', 'asignado_a', 'prioridad']
         widgets = {
             'fecha_vencimiento': forms.DateInput(attrs={'type': 'date'}),
         }
 
 class ObservacionForm(forms.Form):
     observacion = forms.CharField(widget=forms.Textarea)
+
+class PrioridadForm(forms.ModelForm):
+    class Meta:
+        model = Tarea
+        fields = ['prioridad']

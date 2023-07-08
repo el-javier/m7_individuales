@@ -1,27 +1,35 @@
-<h1>ABP 6 Modulo 7</h1>
+<h1>ABP sprint Modulo 7</h1>
+casi listo, pero aun en desarrollo
 
 <b>usuario para pruebas : admin <br/>
 pass : 1z2x3c4v.</b>
 
+<b>segundo usuario para pruebas : Simon <br/>
+pass : 1z2x3c4v.</b>
+
+este segund usuario sirve para cmprobar que cada usuario vera solo el listado de tareas asignado a su usuario
+
 No incluye .pdf
 
-En este ejercicio solo lo hare funcionar, por ahora se ve desordenado en los proximos se aplicara el estilo definitivo
+siendo el ultimo del modulo aplicare un estilo mejorado
+
 <h2>Desarrollo</h2>
 
-- En la vista de Visualización, agregar un formulario que permita capturar un texto en donde el
-usuario pueda registrar observaciones sobre la tarea que está visualizando. Este texto deberá
-contar con un botón Guardar, que registrará en la base de datos. Al cargar la Visualización, el
-campo de texto deberá tener las observaciones que se hayan registrado en visualizaciones
-anteriores.
-
-Esta habilitada el agregar observaciones en las tareas 
-ingresar logeado a ver tarea y ahi podra escrbir una observacion y actualizarla cuando corresponda 
-
-- En la vista de Visualización de Tareas, agregar las siguientes acciones: Eliminar, eliminando el
-registro; Completar, cambiando el estado del registro a terminado. En ambos casos, luego de la
-persistencia, redirigir a la vista de Listado.
-
-Estan habilitados 3 botones en cada tarea del listado; ver : que fue el primer boton
-completar : que  cambia la etiqueta de la tarea a completada y se refresca la pagina de listado de tareas y como inclui tambien un listado de tareas completadas , esta tarea se vera reflejada en esa lista
-boton eliminar , que elimina la tarea , pide confirmacion de la accion y luego vuelve al listado de tareas.
+Tomando como base el proyecto que ha desarrollado como ABP individual, considere agregar la siguientes
+funcionalidades:
+− Asignar tareas a otros usuarios, para lo que deberá realizar las siguientes modificaciones:
+− En vista Creación, permitir que el usuario seleccione el usuario al que se le asignará la
+tarea.
+− Al guardar la nueva Tarea, deberá almacenar el usuario seleccionado y no el usuario actual.
+− Priorización de Tareas, para lo que deberás realizar lo siguiente:
+− Crear el modelo correspondiente de Prioridades, para permitir que éstas sean dinámicas.
+− Realizar la migración correspondiente.
+− Agregar el modelo a la gestión de entidades de la administración de Django, para que,
+desde ahí, los superuser puedan realizar las modificaciones que se estimen necesarias.
+− En vista Creación, permitir que los usuarios seleccionen la prioridad, la que deberá
+guardarse junto con los otros datos.
+− En vista Visualización, desplegar cuál es la prioridad de la tarea, ojalá de forma destacada.
+− En vista Edición, permitir que los usuarios puedan cambiar la prioridad. Se debe guardar
+el valor junto con los otros datos del registro.
+− En vista Listado, agregar la columna prioridad a la tabla de despliegue.
 

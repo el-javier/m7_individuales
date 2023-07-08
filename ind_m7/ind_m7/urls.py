@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path
-from m7app.views import login_view, logout_view, home, listar_tareas, crear_tarea, ver_tarea, editar_tarea, confirmar_eliminar_tarea, completar_tarea
+from m7app.views import login_view, logout_view, home, listar_tareas, crear_tarea, ver_tarea, editar_tarea, confirmar_eliminar_tarea, completar_tarea, editar_prioridad
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +30,6 @@ urlpatterns = [
     path('tareas/editar/<int:tarea_id>/', editar_tarea, name='editar_tarea'),
     path('tareas/eliminar/<int:tarea_id>/', confirmar_eliminar_tarea, name='confirmar_eliminar_tarea'),
     path('tareas/completar/<int:tarea_id>/', completar_tarea, name='completar_tarea'),
+    path('tareas/editar_prioridad/<int:tarea_id>/', editar_prioridad, name='editar_prioridad'),
+
 ]
