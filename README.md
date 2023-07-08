@@ -7,7 +7,7 @@ pass : 1z2x3c4v.</b>
 <b>segundo usuario para pruebas : Simon <br/>
 pass : 1z2x3c4v.</b>
 
-este segund usuario sirve para cmprobar que cada usuario vera solo el listado de tareas asignado a su usuario
+este segundo usuario sirve para comprobar que cada usuario vera solo el listado de tareas asignado a su usuario
 
 No incluye .pdf
 
