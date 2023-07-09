@@ -81,13 +81,24 @@ WSGI_APPLICATION = 'ind_m7.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'js_m7',
+#         'USER': 'js_usuario',
+#         'PASSWORD': '1z2x3c4v.',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'js_m7',
         'USER': 'js_usuario',
-        'PASSWORD': '1z2x3c4v.',
-        'HOST': 'localhost',
+        'PASSWORD': '2hYYujl23MmdjosB8DmaeKZeiwnxlWG2',
+        'HOST': 'dpg-cil13dlgkuvinfmckp20-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
