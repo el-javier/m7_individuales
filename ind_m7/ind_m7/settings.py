@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'js_m7',
         'USER': 'js_usuario',
         'PASSWORD': '1z2x3c4v.',
-        'HOST': 'localhost',
+        'HOST': 'postgres://js_usuario:2hYYujl23MmdjosB8DmaeKZeiwnxlWG2@dpg-cil13dlgkuvinfmckp20-a.oregon-postgres.render.com/js_m7',
         'PORT': '5432',
     }
 }
