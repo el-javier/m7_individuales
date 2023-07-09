@@ -5,6 +5,8 @@ pass : 1z2x3c4v.</b>
 
 En pdf (abp1 M7.pdf) estan las pregunas y respuestas con imagenes y otros detalles 
 
+* se actualizo el servidor de localhost a render.com , aplicado a ls ejercicios del 1 al sprint m7. El cambio se hizo en el sprint
+
 <h2>Desarrollo</h2>
 
 Crear un proyecto en Django, con las aplicaciones que estimes necesarias para abordar el
