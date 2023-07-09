@@ -86,8 +86,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'js_m7',
         'USER': 'js_usuario',
-        'PASSWORD': '1z2x3c4v.',
-        'HOST': 'postgres://js_usuario:2hYYujl23MmdjosB8DmaeKZeiwnxlWG2@dpg-cil13dlgkuvinfmckp20-a.oregon-postgres.render.com/js_m7',
+        'PASSWORD': '2hYYujl23MmdjosB8DmaeKZeiwnxlWG2',
+        'HOST': 'dpg-cil13dlgkuvinfmckp20-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
